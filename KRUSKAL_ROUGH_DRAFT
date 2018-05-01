@@ -1,0 +1,103 @@
+from Weighted_Graph import *
+G = Weighted_Graph('tested.txt')
+
+'''
+
+#VARIABLES ARE LOCAL AND HAVE NOT BEEN TESTED OUTSIDE OF THIS .PY FILE
+#edges=[]
+#vertex=[]
+#T=({},[])
+
+#total_cost = 0
+
+# FUNCTION TO FIND # OF VERTICES
+# Kruskal's *MUST* start as a forest that is made of the vertices of the origianal graph
+def Num_vert():
+    num = len(G.vertex_set())-1
+    return num
+
+# FUNCTION TO STORE EDGES IN AN ARRAY
+# another way of manipulating the data instead of a dictionary
+def store_edges_into_array(edges):
+    edges=[]
+    for edge in G.edge_dict():
+        edges.append(edge)
+    re
+# FUNCTION TO FIND MINIMUM EDGE
+# function is long and can possibly be cleaned up
+def find_min_edge(edges):
+    
+    store_edges_into_array(edges)
+    vertex=[]
+    F=({},[])
+    mini=edges[0]
+    ed=edges[1]
+    for i in edges:
+        cost=G.edge_dict()[i]
+        if cost <mini:
+            mini = cost
+            ed = i
+    if ed[0] not in vertex or ed[1] not in vertex:
+        F[1].append(ed)
+        vertex.append(ed[0])
+        vertex.append(ed[1])
+        G.draw_subgraph(T)
+        #global total_cost
+        #total_cost+= mini
+        edges.remove(ed)
+    else:
+        edges.remove(ed)
+    return (edges)
+
+
+# TEST SECTION OF FILE
+# this is what executes when you run the code inside of this file
+#G.draw_graph()
+
+#store_edges_into_array(edges)
+
+#while len(set(vertex))-1< Num_vert():
+    #find_min_edge(edges)
+    
+#print('Total cost=', total_cost)
+
+'''
+def cost(G, e):
+    return G.edge_dict()[e]
+
+def intital_forest(G):
+    return (G.vertex_set(),[])
+
+def neighbors(G, v):
+    temp_N=[]
+    for e in G.edge_set():
+        if v in e:
+            if e[0] != v:
+                temp_N.append(e[0])
+            else:
+                temp_N.append(e[1])
+    return(temp_N
+           )
+print(neighbors(G, 0))
+
+def set_N(G,S):
+    temp_N=[]
+    for v in S:
+        for w in neighbors(G,v):
+            temp_N.append(w)
+    return(temp_N)
+print(set_N(G, {0,5}))
+
+def vertex_disjoint(C, v):
+    
+    for e in C[1]:
+        if v in e:
+            return False
+    return True
+
+def components(G):
+    return[({v},[]) for v in G.vertex_set()]
+    
+#def possible_edges(G)
+    
+    
